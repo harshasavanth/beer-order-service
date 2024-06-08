@@ -1,4 +1,4 @@
-package com.microservice.beerorderservice.model;
+package com.microservice.beerorderservice.web.model;
 
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

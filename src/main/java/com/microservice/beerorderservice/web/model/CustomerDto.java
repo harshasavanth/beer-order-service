@@ -1,4 +1,4 @@
-package com.microservice.beerorderservice.model;
+package com.microservice.beerorderservice.web.model;
 
 import lombok.Builder;
 import lombok.Data;

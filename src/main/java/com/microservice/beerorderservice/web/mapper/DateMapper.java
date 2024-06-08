@@ -1,4 +1,4 @@
-package com.microservice.beerorderservice.mapper;
+package com.microservice.beerorderservice.web.mapper;
 
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package com.microservice.beerorderservice.mapper;
+package com.microservice.beerorderservice.web.mapper;
 
 import com.microservice.beerorderservice.domain.BeerOrder;
-import com.microservice.beerorderservice.model.BeerOrderDto;
+import com.microservice.beerorderservice.web.model.BeerOrderDto;
 import org.mapstruct.Mapper;
 
 @Mapper(uses = {DateMapper.class, BeerOrderLineMapper.class})
