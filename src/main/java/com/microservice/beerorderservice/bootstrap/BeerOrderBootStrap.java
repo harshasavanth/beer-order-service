@@ -3,12 +3,13 @@ package com.microservice.beerorderservice.bootstrap;
 import com.microservice.beerorderservice.domain.Customer;
 import com.microservice.beerorderservice.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class BeerOrderBootStrap implements CommandLineRunner {
