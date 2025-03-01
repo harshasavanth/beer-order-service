@@ -1,1 +1,2 @@
-# beer-order-service
+# Beer Order Service
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/UxUXx7ps6J9YrmUsAHoAfA/E9jgY5rTnBaGdDmV3TFhG6/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/UxUXx7ps6J9YrmUsAHoAfA/E9jgY5rTnBaGdDmV3TFhG6/tree/main)
