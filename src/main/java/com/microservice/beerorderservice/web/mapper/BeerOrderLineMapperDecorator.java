@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Optional;
 
-public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMapper{
+public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMapper {
 
     private BeerService beerService;
     private BeerOrderLineMapper beerOrderLineMapper;
@@ -21,21 +21,22 @@ public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMappe
 
     @Autowired
     @Qualifier("delegate")
-    private void setBeerOrderLineMapper(BeerOrderLineMapper beerOrderLineMapper) {
+    public void setBeerOrderLineMapper(BeerOrderLineMapper beerOrderLineMapper) {
         this.beerOrderLineMapper = beerOrderLineMapper;
     }
 
     @Override
-    public BeerOrderLineDto beerOrderLineToDto(BeerOrderLine line){
-        BeerOrderLineDto beerOrderLineDto = beerOrderLineMapper.beerOrderLineToDto(line);
+    public BeerOrderLineDto beerOrderLineToDto(BeerOrderLine line) {
+        BeerOrderLineDto orderLineDto = beerOrderLineMapper.beerOrderLineToDto(line);
         Optional<BeerDto> beerDtoOptional = beerService.getBeerByUpc(line.getUpc());
 
         beerDtoOptional.ifPresent(beerDto -> {
-            beerOrderLineDto.setBeerName(beerDto.getBeerName());
-            beerOrderLineDto.setBeerStyle(beerDto.getBeerStyle());
-            beerOrderLineDto.setPrice(beerDto.getPrice());
-            beerOrderLineDto.setBeerId(beerDto.getId());
+            orderLineDto.setBeerName(beerDto.getBeerName());
+            orderLineDto.setBeerStyle(beerDto.getBeerStyle());
+            orderLineDto.setPrice(beerDto.getPrice());
+            orderLineDto.setBeerId(beerDto.getId());
         });
-        return beerOrderLineDto;
+
+        return orderLineDto;
     }
 }
